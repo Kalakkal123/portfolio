@@ -43,14 +43,14 @@
 
     /* Hero Section */
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
+      justify-content: center;
+      gap: 60px;
+      padding: 0 10%;
+      text-align: left;
       position: relative;
-      padding: 0 20px;
     }
 
     .overlay {
@@ -77,22 +77,35 @@
       to { transform: translateY(-10vh); opacity: 0; }
     }
 
-    .hero-content { position: relative; z-index: 2; }
+    .hero-content {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 1.2s ease forwards;
+    }
 
     .profile-photo {
-      width: 220px;
-      height: 220px;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .profile-photo img {
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
       border: 4px solid #9b59ff;
-      box-shadow: 0 0 40px rgba(155, 89, 255, 0.4);
-      overflow: hidden;
-      margin-bottom: 25px;
+      box-shadow: 0 0 50px rgba(155, 89, 255, 0.4);
+      object-fit: cover;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .profile-photo:hover { transform: scale(1.05); box-shadow: 0 0 60px rgba(155, 89, 255, 0.6); }
-
-    .hero-content img { width: 100%; height: 100%; object-fit: cover; }
+    .profile-photo img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 70px rgba(155, 89, 255, 0.6);
+    }
 
     .hero h1 {
       font-size: 3rem;
@@ -101,10 +114,20 @@
       -webkit-text-fill-color: transparent;
     }
 
-    .hero h2 { color: #c9d2de; font-size: 1.2rem; margin-bottom: 20px; }
-    .hero p { max-width: 600px; color: #b8c1d1; line-height: 1.6; margin-bottom: 30px; }
+    .hero h2 {
+      color: #c9d2de;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
 
-    .btn-row { display: flex; gap: 15px; justify-content: center; }
+    .hero p {
+      max-width: 500px;
+      color: #b8c1d1;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 15px; }
     .btn {
       background: linear-gradient(90deg, #9b59ff, #00f5ff);
       color: #0a0115;
@@ -185,9 +208,11 @@
       border-top: 1px solid rgba(255,255,255,0.1);
     }
 
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.3rem; }
-      .profile-photo { width: 180px; height: 180px; }
+    @media (max-width: 900px) {
+      .hero { flex-direction: column-reverse; text-align: center; gap: 40px; }
+      .hero-content, .profile-photo { flex: none; }
+      .profile-photo img { width: 200px; height: 200px; }
+      .hero h1 { font-size: 2.4rem; }
     }
   </style>
 </head>
@@ -208,10 +233,8 @@
   <section class="hero">
     <div class="overlay"></div>
     <div class="particles" id="particles"></div>
+
     <div class="hero-content">
-      <div class="profile-photo">
-        <img src="https://lh3.googleusercontent.com/a/ACg8ocLbDPDUnQYDOtdBqZA9QkrBUJyUS9nNH-05onmsCR12afJl_18B=s360-c-no" alt="T Karthikeyan" />
-      </div>
       <h1>Hey, I’m T Karthikeyan 👋</h1>
       <h2>Developer • Creator • Innovator</h2>
       <p>I build interactive web experiences, ESP32 projects, and 2D games — blending logic, creativity, and futuristic design.</p>
@@ -220,6 +243,10 @@
         <a href="projects.html" class="btn">Projects</a>
         <a href="contact.html" class="btn">Contact</a>
       </div>
+    </div>
+
+    <div class="profile-photo">
+      <img src="https://lh3.googleusercontent.com/a/ACg8ocLbDPDUnQYDOtdBqZA9QkrBUJyUS9nNH-05onmsCR12afJl_18B=s360-c-no" alt="T Karthikeyan">
     </div>
   </section>
 
