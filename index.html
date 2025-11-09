@@ -97,6 +97,29 @@
       animation: fadeIn 1.2s ease forwards;
     }
 
+    /* Profile Photo */
+    .profile-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid #9b59ff;
+      box-shadow: 0 0 40px rgba(155, 89, 255, 0.4);
+      margin-bottom: 24px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 60px rgba(155, 89, 255, 0.6);
+    }
+
     .hero h1 {
       font-size: 3rem;
       background: linear-gradient(90deg, #9b59ff, #00f5ff);
@@ -262,6 +285,9 @@
     <div class="overlay"></div>
     <div class="particles" id="particles"></div>
     <div class="hero-content">
+      <div class="profile-photo">
+        <img src="https://lh3.googleusercontent.com/a/ACg8ocLbDPDUnQYDOtdBqZA9QkrBUJyUS9nNH-05onmsCR12afJl_18B=s360-c-no" alt="T Karthikeyan" />
+      </div>
       <h1>Hey, I’m <span class="highlight">T Karthikeyan</span></h1>
       <h2>Developer • Creator • Innovator</h2>
       <p>I build interactive web experiences, ESP32 projects, and 2D games — blending logic, creativity, and futuristic design.</p>
