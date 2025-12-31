@@ -7,14 +7,13 @@
 
   <style>
     :root {
-      --bg: #0e0f12;
-      --card: #15171c;
-      --text: #eaeaea;
-      --muted: #9aa3b2;
-      --border: rgba(255,255,255,0.08);
+      --bg: #ffffff;
+      --soft: #f6f8fb;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
       --accent: #4f6cff;
       --radius: 14px;
-      --shadow: 0 12px 28px rgba(0,0,0,0.35);
     }
 
     * {
@@ -28,7 +27,7 @@
       color: var(--text);
     }
 
-    /* NAVBAR */
+    /* NAV */
     .navbar {
       position: fixed;
       top: 0;
@@ -37,23 +36,23 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(14,15,18,0.8);
-      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       z-index: 1000;
     }
 
     .logo {
       font-weight: 600;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 28px;
-      padding: 0;
+      gap: 26px;
       margin: 0;
+      padding: 0;
     }
 
     .nav-links a {
@@ -69,12 +68,13 @@
 
     /* HERO */
     .about-hero {
-      padding: 140px 10% 60px;
+      padding: 140px 10% 80px;
       display: flex;
       flex-wrap: wrap;
+      gap: 80px;
       align-items: center;
-      gap: 70px;
       justify-content: center;
+      background: linear-gradient(to bottom, #f9fafb, #ffffff);
     }
 
     .about-img img {
@@ -82,8 +82,8 @@
       height: 240px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--border);
-      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      background: white;
     }
 
     .about-content {
@@ -91,7 +91,7 @@
     }
 
     .about-content h1 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       font-weight: 600;
       margin-bottom: 16px;
     }
@@ -99,21 +99,21 @@
     .about-content p {
       color: var(--muted);
       line-height: 1.7;
-      margin-bottom: 14px;
       font-size: 1.05rem;
+      margin-bottom: 14px;
     }
 
-    /* SECTION TITLE */
+    /* SECTION */
     .section-title {
       text-align: center;
-      margin: 80px 0 30px;
-      font-size: 1.9rem;
+      margin: 90px 0 30px;
+      font-size: 2rem;
       font-weight: 600;
     }
 
     /* SKILLS */
     .skills-grid {
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto 40px;
       display: flex;
       flex-wrap: wrap;
@@ -122,7 +122,7 @@
     }
 
     .skills-grid span {
-      background: var(--card);
+      background: var(--soft);
       border: 1px solid var(--border);
       padding: 10px 22px;
       border-radius: 30px;
@@ -132,38 +132,36 @@
 
     .skills-grid span:hover {
       transform: translateY(-2px);
-      border-color: rgba(255,255,255,0.2);
+      background: #fff;
     }
 
     /* STATS */
     .stats {
       max-width: 900px;
-      margin: 60px auto 40px;
+      margin: 60px auto;
       display: flex;
       justify-content: center;
-      gap: 22px;
+      gap: 30px;
       flex-wrap: wrap;
     }
 
     .stat-box {
-      background: var(--card);
+      background: var(--soft);
       border: 1px solid var(--border);
-      padding: 26px 34px;
+      padding: 28px 34px;
       border-radius: var(--radius);
       text-align: center;
       min-width: 180px;
-      box-shadow: var(--shadow);
     }
 
     .stat-box h3 {
-      font-size: 1.9rem;
+      font-size: 2rem;
       margin-bottom: 6px;
     }
 
     .stat-box p {
       color: var(--muted);
       margin: 0;
-      font-size: 0.95rem;
     }
 
     /* CTA */
@@ -177,14 +175,14 @@
       padding: 14px 36px;
       border-radius: 30px;
       border: 1px solid var(--border);
-      color: var(--text);
-      background: #1c1f26;
-      transition: 0.2s ease;
+      background: #111827;
+      color: white;
       font-weight: 600;
+      transition: 0.2s;
     }
 
     .cta a:hover {
-      background: #242834;
+      background: #000;
     }
 
     footer {
@@ -192,7 +190,6 @@
       padding: 30px;
       border-top: 1px solid var(--border);
       color: var(--muted);
-      margin-top: 40px;
     }
   </style>
 </head>
@@ -203,7 +200,7 @@
     <div class="logo">T Karthikeyan</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
+      <li><a class="active" href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -211,13 +208,19 @@
 
   <section class="about-hero">
     <div class="about-img">
-      <img src="https://raw.githubusercontent.com/Kalakkal123/PORTFOLIO/refs/heads/main/file_00000000ab7c72069271469ca3aa9c04.png" alt="Profile">
+      <img src="https://raw.githubusercontent.com/Kalakkal123/PORTFOLIO/refs/heads/main/file_00000000ab7c72069271469ca3aa9c04.png">
     </div>
 
     <div class="about-content">
       <h1>Hi, I’m T Karthikeyan</h1>
-      <p>I’m a developer focused on building clean, efficient digital products — from modern websites to real-time ESP32 projects.</p>
-      <p>I care about simplicity, performance, and creating things that actually work in the real world.</p>
+      <p>
+        I’m a developer focused on building clean, efficient digital products —
+        from modern websites to real-time ESP32 projects.
+      </p>
+      <p>
+        I enjoy solving real-world problems through simple, scalable design and
+        performance-focused development.
+      </p>
     </div>
   </section>
 
