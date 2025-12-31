@@ -5,304 +5,246 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>T Karthikeyan | Portfolio</title>
 
-  <!-- GLOBAL STYLE -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/theme.js"></script>
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
-/* ------------------------------
-   GLOBAL RESET & BASE
------------------------------- */
-:root{
-  --bg:#0f1720;
-  --card:#0f1727;
-  --muted:#9aa6b2;
-  --accent1:#6c7ef6;
-  --accent2:#5ad1c5;
-  --radius:16px;
-  --shadow1:0 10px 25px rgba(0,0,0,0.45);
-}
+    :root {
+      --bg: #0b0f1a;
+      --card: #12172a;
+      --text: #e5e7eb;
+      --muted: #9aa4b2;
+      --accent: #7c7cff;
+      --border: rgba(255,255,255,0.08);
+    }
 
-body{
-  margin:0;
-  font-family: "Poppins", sans-serif;
-  background: var(--bg);
-  color:#fff;
-  overflow-x:hidden;
-}
+    * { box-sizing: border-box; }
 
-/* ------------------------------
-   NAVBAR
------------------------------- */
-.navbar{
-  width:100%;
-  padding:18px 10%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:fixed;
-  top:0;
-  backdrop-filter: blur(12px);
-  background: rgba(15,23,32,0.55);
-  z-index:1000;
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
-.logo{
-  font-size:1.4rem;
-  font-weight:700;
-}
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:24px;
-}
-.nav-links a{
-  color:var(--muted);
-  text-decoration:none;
-  font-weight:500;
-  transition:0.25s;
-}
-.nav-links a:hover,
-.nav-links .active{
-  color:var(--accent1);
-}
-#themeToggle{
-  background:none;
-  border:none;
-  color:var(--accent1);
-  font-size:1.25rem;
-  cursor:pointer;
-}
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: radial-gradient(circle at top, #121b33, #05070d);
+      color: var(--text);
+    }
 
-/* ------------------------------
-   HERO SECTION (new)
------------------------------- */
-.hero{
-  padding:160px 10% 120px;
-  display:flex;
-  align-items:center;
-  gap:70px;
-  position:relative;
-}
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10,12,20,0.7);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
 
-.hero-left{
-  flex:1;
-}
+    nav h1 {
+      font-family: Poppins;
+      font-size: 1.2rem;
+    }
 
-.hero-title{
-  font-size:clamp(30px,5vw,54px);
-  font-weight:700;
-  line-height:1.1;
-  margin-bottom:20px;
-}
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 0.95rem;
+    }
 
-.hero-sub{
-  color:var(--muted);
-  font-size:1.1rem;
-  margin-bottom:18px;
-}
+    nav a:hover,
+    nav a.active {
+      color: white;
+    }
 
-.hero-desc{
-  max-width:550px;
-  line-height:1.65;
-  color:#c3ccd7;
-  margin-bottom:30px;
-}
+    /* HERO */
+    .hero {
+      padding: 160px 10% 120px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
 
-.hero-buttons{
-  display:flex;
-  gap:14px;
-}
+    .hero h1 {
+      font-family: Poppins;
+      font-size: clamp(2.5rem, 5vw, 3.2rem);
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
 
-.btn{
-  padding:12px 26px;
-  border-radius:var(--radius);
-  text-decoration:none;
-  font-weight:600;
-  transition:0.25s;
-  display:inline-flex;
-  align-items:center;
-}
-.btn-primary{
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  color:#07121a;
-  box-shadow:var(--shadow1);
-}
-.btn-primary:hover{ transform:translateY(-3px); }
+    .hero p {
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
 
-.btn-ghost{
-  border:1px solid rgba(255,255,255,0.1);
-  color:var(--muted);
-}
-.btn-ghost:hover{
-  color:white;
-  background:rgba(255,255,255,0.05);
-}
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+    }
 
-/* ------------------------------
-   PORTRAIT CARD (premium)
------------------------------- */
-.hero-right{
-  width:360px;
-  flex:none;
-}
+    .btn {
+      padding: 13px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.25s;
+    }
 
-.portrait-card{
-  width:100%;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:var(--radius);
-  overflow:hidden;
-  box-shadow:var(--shadow1);
-  transition:0.4s ease;
-}
-.portrait-card img{
-  width:100%;
-  display:block;
-}
-.portrait-card:hover{
-  transform:translateY(-8px) scale(1.02);
-}
+    .btn-primary {
+      background: linear-gradient(90deg, #7c7cff, #4ee1ff);
+      color: #000;
+    }
 
-/* ------------------------------
-   SKILLS
------------------------------- */
-.skills{
-  padding:80px 20px;
-  text-align:center;
-}
-.skills h2{
-  font-size:2rem;
-  font-weight:700;
-  margin-bottom:30px;
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.skill-grid{
-  max-width:700px;
-  margin:auto;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-}
-.skill-grid span{
-  padding:10px 20px;
-  border-radius:50px;
-  background:rgba(255,255,255,0.07);
-  border:1px solid rgba(255,255,255,0.1);
-  color:white;
-  font-weight:500;
-  transition:0.25s;
-}
-.skill-grid span:hover{
-  transform:translateY(-3px);
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  color:black;
-}
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
 
-/* ------------------------------
-   ABOUT PREVIEW
------------------------------- */
-.about-preview{
-  padding:100px 20px;
-  text-align:center;
-}
-.about-preview h2{
-  font-size:2rem;
-  margin-bottom:20px;
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-.about-preview p{
-  max-width:680px;
-  margin:auto;
-  color:var(--muted);
-  line-height:1.7;
-  margin-bottom:30px;
-}
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
 
-/* ------------------------------
-   FOOTER
------------------------------- */
-footer{
-  text-align:center;
-  padding:30px;
-  margin-top:60px;
-  color:#8693a3;
-  border-top:1px solid rgba(255,255,255,0.06);
-}
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.05);
+    }
 
-/* ------------------------------
-   RESPONSIVE
------------------------------- */
-@media(max-width:900px){
-  .hero{ flex-direction:column; text-align:center; }
-  .hero-right{ width:260px; }
-  .hero-buttons{ justify-content:center; }
-}
+    .hero-img img {
+      width: 260px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 60px rgba(124,124,255,0.25);
+    }
+
+    /* SKILLS */
+    .skills {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    .skills h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .skills-grid span {
+      padding: 10px 22px;
+      border-radius: 30px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
+      transition: 0.25s;
+    }
+
+    .skills-grid span:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ABOUT */
+    .about {
+      text-align: center;
+      padding: 90px 10%;
+    }
+
+    .about p {
+      max-width: 700px;
+      margin: auto;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    @media(max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">T Karthikeyan<span>.</span></div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button id="themeToggle">🌓</button>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <h1 class="hero-title">Hey, I’m T Karthikeyan 👋</h1>
-      <p class="hero-sub">Developer • Creator • Innovator</p>
-      <p class="hero-desc">I build interactive web experiences, ESP32 projects, and 2D games — blending logic, creativity, and futuristic design.</p>
+<nav>
+  <h1>T Karthikeyan</h1>
+  <div>
+    <a class="active" href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-      <div class="hero-buttons">
-        <a href="about.html" class="btn btn-primary">About Me</a>
-        <a href="projects.html" class="btn btn-ghost">Projects</a>
-      </div>
+<section class="hero">
+  <div>
+    <h1>Building clean, modern digital experiences.</h1>
+    <p>
+      I create web apps, embedded systems, and interactive projects that blend
+      design, performance, and real-world logic.
+    </p>
+    <div class="hero-buttons">
+      <a href="about.html" class="btn btn-primary">About Me</a>
+      <a href="projects.html" class="btn btn-outline">View Projects</a>
     </div>
+  </div>
 
-    <div class="hero-right">
-      <div class="portrait-card">
-        <img src="https://raw.githubusercontent.com/Kalakkal123/PORTFOLIO/refs/heads/main/file_00000000ab7c72069271469ca3aa9c04.png" alt="T Karthikeyan">
-      </div>
-    </div>
-  </section>
+  <div class="hero-img">
+    <img src="https://raw.githubusercontent.com/Kalakkal123/PORTFOLIO/refs/heads/main/file_00000000ab7c72069271469ca3aa9c04.png">
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section class="skills">
-    <h2>My Skills</h2>
-    <div class="skill-grid">
-      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Firebase</span>
-      <span>ESP32</span><span>Arduino</span><span>Python</span><span>C++</span>
-      <span>Web Design</span><span>2D Game Dev</span><span>GitHub</span><span>UI Development</span>
-    </div>
-  </section>
+<section class="skills">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Firebase</span>
+    <span>ESP32</span>
+    <span>Arduino</span>
+    <span>Python</span>
+    <span>C++</span>
+    <span>UI Design</span>
+    <span>2D Games</span>
+  </div>
+</section>
 
-  <!-- ABOUT PREVIEW -->
-  <section class="about-preview">
-    <h2>About Me</h2>
-    <p>I’m a developer who loves building creative projects — from 2D browser games to ESP32-powered systems and modern web apps. My goal is to create experiences that mix function with imagination.</p>
-    <a href="about.html" class="btn btn-primary">Learn More →</a>
-  </section>
+<section class="about">
+  <p>
+    I’m passionate about creating meaningful digital experiences — whether it’s
+    a clean web interface, a real-time system, or an experimental project that
+    pushes creativity forward.
+  </p>
+</section>
 
-  <footer>
-    <p>© <span id="year"></span> T Karthikeyan • Built with ⚡</p>
-  </footer>
+<footer>
+  © <span id="year"></span> T Karthikeyan
+</footer>
 
-  <script>
-    document.getElementById("year").innerText = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
 
 </body>
 </html>
