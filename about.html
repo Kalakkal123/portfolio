@@ -5,49 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | T Karthikeyan</title>
 
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/theme.js"></script>
-
   <style>
     :root {
-      --bg: #0f1520;
-      --card: #131a26;
-      --muted: #a8b3c4;
+      --bg: #0e0f12;
+      --card: #15171c;
+      --text: #eaeaea;
+      --muted: #9aa3b2;
       --border: rgba(255,255,255,0.08);
-      --accent1: #6d80f7;
-      --accent2: #59d2c5;
-      --radius: 18px;
-      --shadow: 0 15px 30px rgba(0,0,0,0.35);
+      --accent: #4f6cff;
+      --radius: 14px;
+      --shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      background: var(--bg);
-      font-family: "Poppins", sans-serif;
-      color: #fff;
       margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(14,15,18,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: var(--text);
     }
 
     /* HERO */
     .about-hero {
-      padding: 150px 10% 60px;
+      padding: 140px 10% 60px;
       display: flex;
       flex-wrap: wrap;
-      gap: 70px;
       align-items: center;
+      gap: 70px;
       justify-content: center;
     }
 
     .about-img img {
-      width: 260px;
-      height: 260px;
+      width: 240px;
+      height: 240px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid rgba(255,255,255,0.1);
+      border: 2px solid var(--border);
       box-shadow: var(--shadow);
-      transition: 0.3s;
-    }
-    .about-img img:hover {
-      transform: scale(1.03);
     }
 
     .about-content {
@@ -55,12 +91,9 @@
     }
 
     .about-content h1 {
-      font-size: 2.7rem;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 18px;
-      font-weight: 700;
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 16px;
     }
 
     .about-content p {
@@ -70,41 +103,36 @@
       font-size: 1.05rem;
     }
 
-    /* SECTIONS */
+    /* SECTION TITLE */
     .section-title {
       text-align: center;
       margin: 80px 0 30px;
-      font-size: 2rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 1.9rem;
+      font-weight: 600;
     }
 
-    /* SKILLS GRID */
+    /* SKILLS */
     .skills-grid {
       max-width: 900px;
       margin: 0 auto 40px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .skills-grid span {
       background: var(--card);
       border: 1px solid var(--border);
       padding: 10px 22px;
-      border-radius: 40px;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      color: #fff;
-      transition: 0.25s;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
     }
+
     .skills-grid span:hover {
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      color: #07121a;
-      transform: translateY(-3px);
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.2);
     }
 
     /* STATS */
@@ -125,16 +153,13 @@
       text-align: center;
       min-width: 180px;
       box-shadow: var(--shadow);
-      transition: 0.25s;
-    }
-    .stat-box:hover {
-      transform: translateY(-6px);
     }
 
     .stat-box h3 {
-      font-size: 2rem;
+      font-size: 1.9rem;
       margin-bottom: 6px;
     }
+
     .stat-box p {
       color: var(--muted);
       margin: 0;
@@ -146,18 +171,20 @@
       text-align: center;
       margin: 90px 0;
     }
+
     .cta a {
       text-decoration: none;
-      padding: 14px 34px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      color: #07121a;
-      border-radius: 40px;
-      font-weight: 700;
-      transition: 0.25s;
+      padding: 14px 36px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: #1c1f26;
+      transition: 0.2s ease;
+      font-weight: 600;
     }
+
     .cta a:hover {
-      transform: translateY(-3px);
-      filter: brightness(1.1);
+      background: #242834;
     }
 
     footer {
@@ -173,38 +200,43 @@
 <body>
 
   <nav class="navbar">
-    <div class="logo">T Karthikeyan<span>.</span></div>
+    <div class="logo">T Karthikeyan</div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <button id="themeToggle">🌓</button>
   </nav>
 
-  <!-- HERO -->
   <section class="about-hero">
     <div class="about-img">
       <img src="https://raw.githubusercontent.com/Kalakkal123/PORTFOLIO/refs/heads/main/file_00000000ab7c72069271469ca3aa9c04.png" alt="Profile">
     </div>
 
     <div class="about-content">
-      <h1>Hi, I’m T Karthikeyan 👋</h1>
-      <p>I’m a developer and creator who builds digital experiences — from modern websites to real-time ESP32 projects and interactive games.</p>
-      <p>I focus on clean UI, smooth performance, and a balance between simplicity and creativity.</p>
+      <h1>Hi, I’m T Karthikeyan</h1>
+      <p>I’m a developer focused on building clean, efficient digital products — from modern websites to real-time ESP32 projects.</p>
+      <p>I care about simplicity, performance, and creating things that actually work in the real world.</p>
     </div>
   </section>
 
-  <!-- SKILLS -->
-  <h2 class="section-title">My Skills</h2>
+  <h2 class="section-title">Skills</h2>
   <div class="skills-grid">
-    <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Firebase</span>
-    <span>ESP32</span><span>Arduino</span><span>Python</span><span>C++</span>
-    <span>UI Design</span><span>2D Games</span><span>GitHub</span><span>Real-Time Systems</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Firebase</span>
+    <span>ESP32</span>
+    <span>Arduino</span>
+    <span>Python</span>
+    <span>C++</span>
+    <span>UI Design</span>
+    <span>2D Games</span>
+    <span>GitHub</span>
+    <span>Real-Time Systems</span>
   </div>
 
-  <!-- STATS -->
   <h2 class="section-title">Experience</h2>
   <div class="stats">
     <div class="stat-box">
@@ -221,13 +253,12 @@
     </div>
   </div>
 
-  <!-- CTA -->
   <div class="cta">
     <a href="projects.html">View My Projects →</a>
   </div>
 
   <footer>
-    <p>© <span id="year"></span> T Karthikeyan • Built with 💜</p>
+    <p>© <span id="year"></span> T Karthikeyan</p>
   </footer>
 
   <script>
