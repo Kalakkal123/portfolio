@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | T Karthikeyan</title>
 
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/theme.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -27,28 +26,33 @@
       margin: 0;
     }
 
-    /* HEADER */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 25px 10%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    nav a.active { color: #fff; }
+
     .contact-hero {
-      padding: 150px 10% 50px;
+      padding: 140px 10% 40px;
       text-align: center;
     }
+
     .contact-hero h1 {
       font-size: 2.7rem;
-      font-weight: 700;
       background: linear-gradient(90deg, var(--accent1), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 14px;
-    }
-    .contact-hero p {
-      max-width: 700px;
-      margin: auto;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 1.05rem;
     }
 
-    /* GRID */
     .contact-grid {
       max-width: 1100px;
       margin: 60px auto;
@@ -64,38 +68,14 @@
       border-radius: var(--radius);
       padding: 30px;
       backdrop-filter: blur(10px);
-      transition: 0.3s ease;
       box-shadow: var(--shadow);
     }
 
-    .contact-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.45);
-    }
-
-    .contact-card h3 {
-      margin-bottom: 8px;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .contact-card a {
-      color: var(--accent2);
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-      word-break: break-all;
-    }
-    .contact-card a:hover {
-      color: var(--accent1);
-    }
-
-    /* SOCIAL ICONS */
     .social-row {
-      margin-top: 60px;
       display: flex;
       justify-content: center;
       gap: 18px;
+      margin: 50px 0;
     }
 
     .social-row a {
@@ -104,158 +84,133 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-decoration: none;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      color: #07121a;
+      color: #000;
+      text-decoration: none;
       font-size: 1.4rem;
-      transition: 0.25s;
     }
 
-    .social-row a:hover {
-      transform: translateY(-4px) scale(1.05);
-      filter: brightness(1.1);
-    }
-
-    /* MESSAGE FORM */
     .message-box {
       max-width: 600px;
       margin: 80px auto;
       background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 30px;
-      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
 
     .message-box h2 {
       text-align: center;
-      font-size: 1.8rem;
       background: linear-gradient(90deg, var(--accent1), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 20px;
     }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group input,
-    .form-group textarea {
+    input, textarea {
       width: 100%;
-      padding: 12px 14px;
+      padding: 12px;
+      margin: 10px 0;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border);
       border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.07);
-      color: #fff;
-      font-size: 1rem;
-      resize: none;
-      font-family: inherit;
+      color: white;
     }
 
-    .form-group textarea {
-      height: 120px;
-    }
-
-    .send-btn {
+    button {
       width: 100%;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 40px;
+      padding: 12px;
       background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      color: #07121a;
+      border: none;
+      border-radius: 30px;
       font-weight: 700;
       cursor: pointer;
-      transition: 0.25s;
-    }
-    .send-btn:hover {
-      transform: translateY(-3px);
-      filter: brightness(1.15);
+      margin-top: 10px;
     }
 
     footer {
       text-align: center;
-      margin-top: 100px;
       padding: 30px;
       color: var(--muted);
       border-top: 1px solid var(--border);
-    }
-
-    @media(max-width:500px){
-      .social-row{ flex-wrap: wrap; }
     }
   </style>
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="logo">T Karthikeyan<span>.</span></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-    <button id="themeToggle">🌓</button>
-  </nav>
-
-  <!-- HERO -->
-  <section class="contact-hero">
-    <h1>Let’s Connect</h1>
-    <p>I’m always open to collaborations, ideas, or interesting projects—websites, ESP32 builds, or games. Let’s create something amazing.</p>
-  </section>
-
-  <!-- CONTACT GRID -->
-  <section class="contact-grid">
-    <div class="contact-card">
-      <h3>Email</h3>
-      <a href="mailto:kalakkalkarthi6838@gmail.com">kalakkalkarthi6838@gmail.com</a>
-    </div>
-
-    <div class="contact-card">
-      <h3>GitHub</h3>
-      <a href="https://github.com/kalakkal123" target="_blank">github.com/kalakkal123</a>
-    </div>
-
-    <div class="contact-card">
-      <h3>LinkedIn</h3>
-      <a href="#" target="_blank">Not Available Yet</a>
-    </div>
-  </section>
-
-  <!-- SOCIAL -->
-  <div class="social-row">
-    <a href="https://instagram.com/kalakkal_karthikeyan_official_" target="_blank">📸</a>
-    <a href="https://www.youtube.com/@KalakkalKarthikeyan" target="_blank">▶️</a>
+<nav>
+  <div>T Karthikeyan</div>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a class="active" href="contact.html">Contact</a>
   </div>
+</nav>
 
-  <!-- MESSAGE FORM -->
-  <div class="message-box">
-    <h2>Send Me a Message</h2>
-    <form>
-      <div class="form-group">
-        <input type="text" placeholder="Your Name" required />
-      </div>
-      <div class="form-group">
-        <input type="email" placeholder="Your Email" required />
-      </div>
-      <div class="form-group">
-        <textarea placeholder="Your Message..." required></textarea>
-      </div>
-      <button type="button" class="send-btn">Send (Visual Only)</button>
-    </form>
+<section class="contact-hero">
+  <h1>Let’s Connect</h1>
+  <p>Have an idea or project? Let’s build something amazing.</p>
+</section>
+
+<section class="contact-grid">
+  <div class="contact-card">
+    <h3>Email</h3>
+    <p>kalakkalkarthi6838@gmail.com</p>
   </div>
+  <div class="contact-card">
+    <h3>GitHub</h3>
+    <p>github.com/kalakkal123</p>
+  </div>
+  <div class="contact-card">
+    <h3>YouTube</h3>
+    <p>@KalakkalKarthikeyan</p>
+  </div>
+</section>
 
-  <footer>
-    <p>© <span id="year"></span> T Karthikeyan • Built with 💜</p>
-  </footer>
+<div class="social-row">
+  <a href="https://instagram.com/kalakkal_karthikeyan_official_" target="_blank">📸</a>
+  <a href="https://youtube.com/@KalakkalKarthikeyan" target="_blank">▶️</a>
+</div>
 
-  <script>
-    document.getElementById("year").innerText = new Date().getFullYear();
-  </script>
+<div class="message-box">
+  <h2>Send Me a Message</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+<footer>
+  © <span id="year"></span> T Karthikeyan
+</footer>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init("FMeIydEhv3G2lPE2A");
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_mhqkf0j",
+      "template_kgnjb9l",
+      this
+    ).then(() => {
+      alert("✅ Message sent successfully!");
+      this.reset();
+    }, (error) => {
+      alert("❌ Failed to send message");
+      console.error(error);
+    });
+  });
+
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
 
 </body>
 </html>
