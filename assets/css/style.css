@@ -326,3 +326,200 @@ footer {
     width: 180px;
   }
 }
+
+/* =====================================
+   THEME SYSTEM
+===================================== */
+
+:root {
+  --bg: #070b16;
+  --bg-soft: #0e1424;
+  --panel: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8ecf3;
+  --text-soft: #aab2c0;
+  --accent1: #4a6bff;
+  --accent2: #05faff;
+}
+
+/* LIGHT MODE */
+[data-theme="light"] {
+  --bg: #f7f9fc;
+  --bg-soft: #ffffff;
+  --panel: rgba(0, 0, 0, 0.04);
+  --border: rgba(0, 0, 0, 0.1);
+  --text: #0b0d12;
+  --text-soft: #4a4f5a;
+  --accent1: #6a5cff;
+  --accent2: #00c6ff;
+}
+
+/* Apply colors */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Navbar */
+.navbar {
+  background: color-mix(in srgb, var(--bg), transparent 15%);
+  transition: background 0.3s ease;
+}
+
+/* Button */
+.btn {
+  transition: all 0.25s ease;
+}
+
+/* Toggle animation */
+#themeToggle {
+  transition: transform 0.3s ease;
+}
+
+#themeToggle.spin {
+  transform: rotate(180deg);
+}
+
+
+/* ==============================
+   MODAL STYLES
+============================== */
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.project-modal.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.project-modal.hidden {
+  display: none;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+.modal-box {
+  position: relative;
+  background: linear-gradient(145deg, #0f1629, #0a0f1f);
+  border-radius: 18px;
+  width: 90%;
+  max-width: 650px;
+  padding: 24px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  animation: modalPop 0.35s ease;
+  z-index: 10;
+}
+
+@keyframes modalPop {
+  from {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-box img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+.modal-content h3 {
+  margin-bottom: 8px;
+  color: #7c9bff;
+}
+
+.modal-content p {
+  color: #b8c0cc;
+  margin-bottom: 20px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-close:hover {
+  color: white;
+}
+
+/* =====================================
+   THEME SYSTEM
+===================================== */
+
+:root {
+  --bg: #070b16;
+  --bg-soft: #0e1424;
+  --panel: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e8ecf3;
+  --text-soft: #aab2c0;
+  --accent1: #4a6bff;
+  --accent2: #05faff;
+}
+
+/* LIGHT MODE */
+[data-theme="light"] {
+  --bg: #f7f9fc;
+  --bg-soft: #ffffff;
+  --panel: rgba(0, 0, 0, 0.04);
+  --border: rgba(0, 0, 0, 0.1);
+  --text: #0b0d12;
+  --text-soft: #4a4f5a;
+  --accent1: #6a5cff;
+  --accent2: #00c6ff;
+}
+
+/* Apply colors */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Navbar */
+.navbar {
+  background: color-mix(in srgb, var(--bg), transparent 15%);
+  transition: background 0.3s ease;
+}
+
+/* Button */
+.btn {
+  transition: all 0.25s ease;
+}
+
+/* Toggle animation */
+#themeToggle {
+  transition: transform 0.3s ease;
+}
+
+#themeToggle.spin {
+  transform: rotate(180deg);
+}
+
