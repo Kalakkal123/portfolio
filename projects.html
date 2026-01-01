@@ -5,74 +5,116 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects | T Karthikeyan</title>
 
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/theme.js"></script>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?
+  family=Inter:wght@300;400;600&
+  family=Poppins:wght@600;700&
+  family=Space+Grotesk:wght@600&
+  family=Manrope:wght@600&
+  family=Outfit:wght@500;700&
+  family=Montserrat:wght@500;600
+  &display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0f1520;
-      --card: #131a26;
-      --card-soft: rgba(255,255,255,0.04);
+      --bg: #070b16;
+      --card: #0f1629;
+      --accent: #7c7cff;
+      --accent2: #4ee1ff;
+      --text: #e8eaf0;
+      --muted: #9aa4b2;
       --border: rgba(255,255,255,0.08);
-      --muted: #b3bdc9;
-      --accent1: #6d80f7;
-      --accent2: #59d2c5;
-      --radius: 16px;
-      --shadow: 0 12px 24px rgba(0,0,0,0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      background: var(--bg);
-      font-family: "Poppins", sans-serif;
-      color: #fff;
+      font-family: Inter, sans-serif;
+      background: radial-gradient(circle at top, #101933, #05070d);
+      color: var(--text);
     }
 
-    /* HEADER HERO */
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 22px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10,12,20,0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-family: Poppins;
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      font-family: Montserrat;
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 24px;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
     .projects-hero {
-      padding: 150px 10% 80px;
+      padding: 160px 10% 80px;
       text-align: center;
     }
+
     .projects-hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      font-family: Space Grotesk;
+      font-size: clamp(2.5rem, 5vw, 3.4rem);
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin-bottom: 16px;
     }
+
     .projects-hero p {
-      color: var(--muted);
-      max-width: 750px;
+      max-width: 760px;
       margin: auto;
-      line-height: 1.6;
+      color: var(--muted);
+      line-height: 1.7;
       font-size: 1.05rem;
     }
 
     /* PROJECT GRID */
-    .projects-wrapper {
+    .projects-grid {
       max-width: 1200px;
       margin: 60px auto;
       padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 32px;
     }
 
     .project-card {
-      background: var(--card-soft);
+      background: linear-gradient(145deg, #111a30, #0a0f1f);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
+      border-radius: 18px;
       overflow: hidden;
-      backdrop-filter: blur(8px);
-      transition: 0.35s ease;
-      box-shadow: var(--shadow);
-      position: relative;
+      transition: 0.35s;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
     }
 
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 30px rgba(0,0,0,0.45);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(124,124,255,0.35);
     }
 
     .project-card img {
@@ -86,133 +128,158 @@
     }
 
     .project-content h3 {
-      margin: 0 0 10px;
-      font-size: 1.3rem;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      font-family: Space Grotesk;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .project-content p {
+      font-family: Manrope;
       color: var(--muted);
-      line-height: 1.55;
       font-size: 0.95rem;
-      margin-bottom: 20px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      border-radius: 20px;
+      background: rgba(124,124,255,0.15);
+      color: #cdd5ff;
+      font-family: Outfit;
     }
 
     .project-content a {
       display: inline-block;
       padding: 10px 22px;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      color: #07121a;
+      border-radius: 30px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #000;
       font-weight: 600;
-      border-radius: 40px;
       text-decoration: none;
-      transition: 0.25s;
+      transition: 0.3s;
     }
 
     .project-content a:hover {
       transform: translateY(-3px);
-      filter: brightness(1.15);
+      box-shadow: 0 10px 30px rgba(124,124,255,0.4);
     }
 
-    /* CTA BUTTON */
+    /* CTA */
     .cta {
       text-align: center;
-      padding: 80px 20px;
+      padding: 90px 20px;
     }
+
     .cta a {
-      padding: 12px 30px;
-      font-weight: 700;
-      text-decoration: none;
-      background: linear-gradient(90deg, var(--accent1), var(--accent2));
-      color: #07121a;
+      padding: 14px 40px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #000;
       border-radius: 40px;
-      transition: 0.25s;
-    }
-    .cta a:hover {
-      transform: translateY(-3px);
-      filter: brightness(1.15);
+      text-decoration: none;
+      font-weight: 700;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 40px;
       color: var(--muted);
       border-top: 1px solid var(--border);
-      margin-top: 40px;
-    }
-
-    @media(max-width:900px){
-      .projects-hero h1 { font-size: 2.3rem; }
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="logo">T Karthikeyan<span>.</span></div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button id="themeToggle">🌓</button>
-  </nav>
 
-  <!-- HERO -->
-  <section class="projects-hero">
-    <h1>My Projects</h1>
-    <p>Here’s everything I’ve built — from 2D games and smart ESP32 systems to modern UI experiments. Clean code, creative ideas, and modern aesthetics.</p>
-  </section>
+<nav>
+  <h1>T Karthikeyan</h1>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a class="active" href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
 
-  <!-- PROJECTS GRID -->
-  <section class="projects-wrapper">
+<section class="projects-hero">
+  <h1>My Projects</h1>
+  <p>
+    A collection of my work — from creative web experiments to functional
+    applications and embedded systems.
+  </p>
+</section>
 
-    <!-- 1 — Assassin -->
-    <div class="project-card">
-      <img src="https://raw.githubusercontent.com/Kalakkal123/portfolio/refs/heads/main/ChatGPT%20Image%20Nov%209%2C%202025%2C%2003_25_02%20PM.png" />
-      <div class="project-content">
-        <h3>ASSASSIN.IN</h3>
-        <p>A dark & fun concept website where users can “hire” assassins — pure HTML/CSS/JS with a clean cyber UI.</p>
-        <a href="https://kalakkal123.github.io/ASSASSIN.IN/" target="_blank">Visit Site</a>
+<section class="projects-grid">
+
+  <!-- Project 1 -->
+  <div class="project-card">
+    <img src="https://raw.githubusercontent.com/Kalakkal123/portfolio/refs/heads/main/ChatGPT%20Image%20Nov%209%2C%202025%2C%2003_25_02%20PM.png">
+    <div class="project-content">
+      <h3>ASSASSIN.IN</h3>
+      <p>Dark themed website with cyber UI and smooth interactions.</p>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">UI</span>
       </div>
+      <a href="https://kalakkal123.github.io/ASSASSIN.IN/" target="_blank">View Project</a>
     </div>
+  </div>
 
-    <!-- 2 — Flappy Bird -->
-    <div class="project-card">
-      <img src="https://raw.githubusercontent.com/Kalakkal123/portfolio/refs/heads/main/ChatGPT%20Image%20Nov%209%2C%202025%2C%2003_26_12%20PM.png" />
-      <div class="project-content">
-        <h3>Flappy Bird</h3>
-        <p>A fully recreated 2D game using JavaScript Canvas — smooth physics, responsive gameplay, and classic nostalgia.</p>
-        <a href="https://kalakkal123.github.io/FLAPPY_BIRD/" target="_blank">Play Game</a>
+  <!-- Project 2 -->
+  <div class="project-card">
+    <img src="https://raw.githubusercontent.com/Kalakkal123/portfolio/refs/heads/main/ChatGPT%20Image%20Nov%209%2C%202025%2C%2003_26_12%20PM.png">
+    <div class="project-content">
+      <h3>Flappy Bird</h3>
+      <p>JavaScript-based 2D game with physics and score logic.</p>
+      <div class="tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">Canvas</span>
+        <span class="tag">Game</span>
       </div>
+      <a href="https://kalakkal123.github.io/FLAPPY_BIRD/" target="_blank">Play Game</a>
     </div>
+  </div>
 
-    <!-- 3 — Translator -->
-    <div class="project-card">
-      <img src="https://raw.githubusercontent.com/Kalakkal123/portfolio/refs/heads/main/ChatGPT%20Image%20Nov%209%2C%202025%2C%2003_27_08%20PM.png" />
-      <div class="project-content">
-        <h3>TAM ENG</h3>
-        <p>A Tamil-to-English translator web app — minimal UI with fast text processing and instant output.</p>
-        <a href="https://kalakkal123.github.io/TAM_ENG/" target="_blank">Try App</a>
+  <!-- Project 3 -->
+  <div class="project-card">
+    <img src="https://raw.githubusercontent.com/Kalakkal123/portfolio/refs/heads/main/ChatGPT%20Image%20Nov%209%2C%202025%2C%2003_27_08%20PM.png">
+    <div class="project-content">
+      <h3>TAM ENG</h3>
+      <p>Tamil to English translator with clean UI and instant output.</p>
+      <div class="tags">
+        <span class="tag">JavaScript</span>
+        <span class="tag">Translator</span>
+        <span class="tag">UI</span>
       </div>
+      <a href="https://kalakkal123.github.io/TAM_ENG/" target="_blank">Try App</a>
     </div>
+  </div>
 
-  </section>
+</section>
 
-  <section class="cta">
-    <a href="contact.html">Get in Touch →</a>
-  </section>
+<section class="cta">
+  <a href="contact.html">Let’s Build Something →</a>
+</section>
 
-  <footer>
-    <p>© <span id="year"></span> T Karthikeyan | Built with ⚡ & 💜</p>
-  </footer>
+<footer>
+  © <span id="year"></span> T Karthikeyan
+</footer>
 
-  <script>
-    document.getElementById("year").innerText = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
 
 </body>
 </html>
